@@ -7,7 +7,7 @@
         <link href="css/css.css" rel="stylesheet">
         <link rel="icon" type="image/png" href="img/tinyicon.png">
     </head>
-    <body>
+    <body class="special">
         <section class="flex-column center">
             <img class="m-100 w-80" src="img/logo.png">
             <form  class="w-100 flex-column center" action="opret-bruger.php" method="post" class="flex-column">

@@ -10,7 +10,7 @@ $kode = $_POST['venskabskode'];
     <link href="css/css.css" rel="stylesheet">
     <link rel="icon" type="image/png" href="img/tinyicon.png">
 </head>
-<body>
+<body class="special">
     <section class="flex-column center">
         <img class="m-100 w-80" src="img/logo.png">
         <h3>
@@ -37,7 +37,7 @@ $kode = $_POST['venskabskode'];
                 ?>
                 <h3>Denne venskabskode findes ikke i systemet</h3>
                 <h3>Test om du har skrevet den rigtigt og prøv igen</h3>
-                <h3 class="m-10"><a href="index.php">Tilbage</a></h3>
+                <h3 class="m-t-50"><a href="index.php">Tilbage</a></h3>
                 <?php
             }
             ?>
