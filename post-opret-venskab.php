@@ -2,8 +2,7 @@
 session_start();
 include "include/connect.php";
 include "phpcode/crud.php";
-$id = $_SESSION['id'];
-$type = $_SESSION['brugertype'];
+$venskabsId = $_POST['venskabs-id'];
 ?>
 <!DOCTYPE html>
 <html lang="da">
@@ -15,12 +14,11 @@ $type = $_SESSION['brugertype'];
     <link rel="icon" type="image/png" href="img/tinyicon.png">
 </head>
 <body>
-    <?php
-    include "include/header.php";
-    ?>
-    <section class="flex-column p-lr-30">
-
+    <section class="flex-column center">
+            <?php
+            createVenskab($venskabsId);
+            header("location:venskaber.php");
+            ?>
     </section>
-    <script src="javascript/script.js"></script>
 </body>
 </html>

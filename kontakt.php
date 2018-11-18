@@ -1,3 +1,10 @@
+<?php
+session_start();
+include "include/connect.php";
+include "phpcode/crud.php";
+$id = $_SESSION['id'];
+$type = $_SESSION['brugertype'];
+?>
 <!DOCTYPE html>
 <html lang="da">
 <head>

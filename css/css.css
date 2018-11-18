@@ -91,6 +91,9 @@ a{
 .m-100{
     margin: 100px;
 }
+.m-t-10{
+    margin-top: 10px;
+}
 .m-t-50{
     margin-top: 50px;
 }
@@ -177,4 +180,13 @@ body{
     font-size: 7em;
     font-weight: 400;
     box-shadow: 0px 0px 10px #000;
+}
+tr{
+    border-bottom: 2px solid #000;
+}
+tr:last-child{
+    border: none;
+}
+td{
+    padding: 10px 0px;
 }
