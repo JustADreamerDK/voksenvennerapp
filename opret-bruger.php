@@ -1,5 +1,19 @@
 <?php
+session_start();
+include "include/connect.php";
+include "phpcode/crud.php";
 $kode = $_POST['venskabskode'];
+$tjekKode = getFriendshipByCode($kode);
+$row = mysqli_fetch_assoc($tjekKode);
+$code = $row['venskabs_key'];
+
+$tilbageKode = $_SESSION['koden'];
+$tjekKoden = getFriendshipByCode($tilbageKode);
+$rowKoden = mysqli_fetch_assoc($tjekKoden);
+$coden = $rowKoden['venskabs_key'];
+if($code <> ''){
+$_SESSION['koden'] = "$code";
+}
 ?>
 <!DOCTYPE html>
 <html lang="da">
@@ -13,12 +27,12 @@ $kode = $_POST['venskabskode'];
 <body class="special">
     <section class="flex-column center">
         <img class="m-100 w-80" src="img/logo.png">
-        <h3>
             <?php
-            if ($kode <> '') {
+            if ($code <> '' || $coden <> '') {
                 ?>
                 <h3 class="w-80 m-10">Så mangler du bare den sidste del, inden du kan få adgang til jeres venskabs kommende billedbank</h3>
                 <form  class="w-100 flex-column center" action="post-opret-bruger.php" method="post" class="flex-column">
+                    <input class="m-10 w-80" type="text" name="venskabs_id" value="<?php echo $code . $coden; ?>" hidden></input>
                     <input class="m-10 w-80" type="text" name="fornavn" placeholder="Fornavn"></input>
                     <input class="m-10 w-80" type="text" name="efternavn" placeholder="Efternavn"></input>
                     <input class="m-10 w-80" type="number" name="tlf" placeholder="Telefon nummer"></input>

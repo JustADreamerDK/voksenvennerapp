@@ -20,7 +20,10 @@ $type = $_SESSION['brugertype'];
         <h2 class="m-t-half">Tilføj en dag</h2>
 
         <img class="m-t-50" src="img/head.png">
+        <?php if ($type == 2 || $type == 3) {
+        ?>
         <a href="tilfoej-dag.php"><button class="tilfoej">+</button></a>
+    <?php } ?>
     </section>
     <script src="javascript/script.js"></script>
 </body>

@@ -9,6 +9,7 @@ $row = mysqli_fetch_assoc($bruger);
 
 $barn = getKidById($id);
 $rowBarn = mysqli_fetch_assoc($barn);
+$barnsNavn = $rowBarn['fornavn'];
 
 $venskabsId = $row['venskab_id'];
 $ven = getVen($venskabsId, $type);
@@ -56,9 +57,12 @@ $rowBarnVen = mysqli_fetch_assoc($barnVen);
             $diff=date_diff($date1,$date3);
             $diffDate=date_diff($date2,$date3);
             ?>
-            <?php if ($type == "3"){ ?>
+            <?php if ($type == "3" && $barnsNavn <> ''){ ?>
                 <h3 class="m-t-50">Barn</h3>
-                <h3 class="bold"><?php echo $rowBarn['fornavn'] . ' ' . $rowBarn['efternavn'];?>, <?php echo $diff->format("%y");  ?>  år</h3>
+                <h3 class="bold"><?php echo $barnsNavn . ' ' . $rowBarn['efternavn'];?>, <?php echo $diff->format("%y");  ?>  år</h3>
+            <?php }if ($type == "3" && $barnsNavn == ''){ ?>
+                <h3 class="m-t-50">Barn</h3>
+                <h3 class="bold">Du har endnu ikke oprettet dit barn i databasen</h3>
             <?php } ?>
             <?php if ($type == "2"){ ?>
                 <h3 class="m-t-50">Ven med</h3>
