@@ -103,6 +103,12 @@ a{
 .p-lr-30{
     padding: 0px 30px;
 }
+.p-l-30{
+    padding-left: 30px;
+}
+.p-25{
+    padding: 25px;
+}
 
 /*Sizes*/
 .w-100{

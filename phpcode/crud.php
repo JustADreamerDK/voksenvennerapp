@@ -49,6 +49,13 @@ function getVen($venskabsId, $type){
     return $result;
 }
 
+function getDayById($venskab_id){
+    global $objCon;
+    $sql = "SELECT `id`, `dato`, `lokation`, `overskrift`, `beskrivelse`, `venskabs_id` FROM `dag` WHERE `venskabs_id` = '$venskab_id'";
+    $result = $objCon->query($sql);
+    return $result;
+}
+
 function createUser($fornavn, $efternavn, $telefonnr, $mail, $brugernavn, $password, $brugertype_id, $venskab_id){
     global $objCon;
     $sql = "INSERT INTO `bruger`(`fornavn`, `efternavn`, `telefonnr`, `mail`, `brugernavn`, `password`, `brugertype_id`, `venskab_id`) VALUES ('$fornavn', '$efternavn', '$telefonnr', '$mail', '$brugernavn', '$password', '$brugertype_id', '$venskab_id')";
