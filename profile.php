@@ -62,7 +62,7 @@ $rowBarnVen = mysqli_fetch_assoc($barnVen);
                 <h3 class="bold"><?php echo $barnsNavn . ' ' . $rowBarn['efternavn'];?>, <?php echo $diff->format("%y");  ?>  år</h3>
             <?php }if ($type == "3" && $barnsNavn == ''){ ?>
                 <h3 class="m-t-50">Barn</h3>
-                <h3 class="bold">Du har endnu ikke oprettet dit barn i databasen</h3>
+                <h3 class="bold"><a href="opret-barn.php">Du har endnu ikke oprettet dit barn, klik her for at oprette barnet</a></h3>
             <?php } ?>
             <?php if ($type == "2"){ ?>
                 <h3 class="m-t-50">Ven med</h3>

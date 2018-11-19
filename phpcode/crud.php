@@ -63,4 +63,12 @@ function createVenskab($venskabsId){
     return $result;
 }
 
+function createBarn($fornavn, $efternavn, $fodselsdag, $bruger_id){
+    global $objCon;
+    $sql = "INSERT INTO `barn`(`fornavn`, `efternavn`, `fodselsdag`, `bruger_id`) VALUES ('$fornavn', '$efternavn', '$fodselsdag', '$bruger_id')";
+    $result = $objCon->query($sql);
+    return $result;
+}
+
+
 ?>
