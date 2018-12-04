@@ -77,6 +77,13 @@ function getPictures($id){
     return $result;
 }
 
+function getPicture($id){
+    global $objCon;
+    $sql = "SELECT `id`, `filnavn`, `bruges_mor`, `bruges_ven`, `dag_id` FROM `billede` WHERE `id` = '$id'";
+    $result = $objCon->query($sql);
+    return $result;
+}
+
 function createUser($fornavn, $efternavn, $telefonnr, $mail, $brugernavn, $password, $brugertype_id, $venskab_id){
     global $objCon;
     $sql = "INSERT INTO `bruger`(`fornavn`, `efternavn`, `telefonnr`, `mail`, `brugernavn`, `password`, `brugertype_id`, `venskab_id`) VALUES ('$fornavn', '$efternavn', '$telefonnr', '$mail', '$brugernavn', '$password', '$brugertype_id', '$venskab_id')";
@@ -105,9 +112,23 @@ function createDay($dato, $lokation, $overskrift, $beskrivelse, $venskab_id){
     return $result;
 }
 
+function updateDay($id, $dato, $lokation, $overskrift, $beskrivelse){
+    global $objCon;
+    $sql = "UPDATE `dag` SET `dato`='$dato',`lokation`='$lokation',`overskrift`='$overskrift',`beskrivelse`='$beskrivelse' WHERE `id`='$id'";
+    $result = $objCon->query($sql);
+    return $result;
+}
+
 function deleteDay($id){
     global $objCon;
     $sql = "DELETE FROM `dag` WHERE `id` = '$id'";
+    $result = $objCon->query($sql);
+    return $result;
+}
+
+function deletePic($id){
+    global $objCon;
+    $sql = "DELETE FROM `billede` WHERE `id` = '$id'";
     $result = $objCon->query($sql);
     return $result;
 }

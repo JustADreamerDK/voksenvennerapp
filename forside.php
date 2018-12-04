@@ -69,7 +69,7 @@ $rowDayTest = mysqli_fetch_assoc($dayTest);
                     ?>
                     <p><?php echo $beskrivelse . '...' ?></p>
                     <h4 class="m-t-10">
-                        <a href="">Læs mere<a>
+                        <a href="read-more.php?id=<?php echo $rowDay['id']; ?>">Læs mere<a>
                         </h4>
                     </div>
                     <?php
@@ -116,7 +116,7 @@ $rowDayTest = mysqli_fetch_assoc($dayTest);
                                 ?>
                                 <p><?php echo $beskrivelse . '...' ?></p>
                                 <h4 class="m-t-10">
-                                    <a href="">Læs mere<a>
+                                    <a href="read-more.php?id=<?php echo $rowDays['id']; ?>">Læs mere<a>
                                     </h4>
                                 </div>
                                 <?php

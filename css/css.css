@@ -97,6 +97,9 @@ a{
 .m-t-half{
     margin-top: 50%;
 }
+.m-l-10{
+    margin-left: 10px;
+}
 .p-lr-30{
     padding: 0px 30px;
 }
@@ -113,6 +116,12 @@ a{
 }
 .w-80{
     width: 80%;
+}
+.w-50{
+    width: 50%;
+}
+.w-30{
+    width: 30%;
 }
 
 /*Buttons & Inputs*/
@@ -197,8 +206,8 @@ td{
     position: absolute;
     display: flex;
     justify-content: space-between;
-    width: 80%;
-    margin-top: -35%;
+    width: 93%;
+    margin-top: 40%;
 }
 .slidebutton{
     width: 65px;
@@ -215,7 +224,6 @@ td{
     border-radius: 15px;
     position: absolute;
     margin-top: -50px;
-    display: none;
 }
 .fileContainer {
     position: relative;
@@ -236,4 +244,8 @@ textarea{
     border: 0px;
     border-radius: 15px;
     padding: 10px 0px;
+}
+.readmore{
+    width: 100%;
+    background: rgba(0, 0, 0, 0);
 }
