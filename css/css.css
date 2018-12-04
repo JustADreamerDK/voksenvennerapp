@@ -109,6 +109,9 @@ a{
 .p-25{
     padding: 25px;
 }
+.p-b-175{
+    padding-bottom: 175px;
+}
 
 /*Sizes*/
 .w-100{
@@ -218,12 +221,13 @@ td{
     border: 0px;
     cursor: pointer;
 }
-.minimenu{
+.minimenu1, .minimenu2, .minimenu3, .minimenu4, .minimenu5{
     background: #CDE9F4;
-    padding: 20px 40px;
+    padding: 20px 50px;
     border-radius: 15px;
     position: absolute;
     margin-top: -50px;
+    display: none;
 }
 .fileContainer {
     position: relative;
@@ -248,4 +252,11 @@ textarea{
 .readmore{
     width: 100%;
     background: rgba(0, 0, 0, 0);
+}
+#something {
+  display: none;
+}
+
+#something:target {
+  display: block;
 }
