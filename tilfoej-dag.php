@@ -19,7 +19,18 @@ $type = $_SESSION['brugertype'];
     include "include/header.php";
     ?>
     <section class="flex-column p-lr-30">
-
+        <form  class="m-t-50 w-100 flex-column center" action="post-opret-dag.php" method="post" class="flex-column">
+            <input class="m-10 w-80" type="date" name="dato" placeholder="Dato" required></input>
+            <input class="m-10 w-80" type="text" name="sted" placeholder="Sted" required></input>
+            <input class="m-10 w-80" type="text" name="overskrift" placeholder="Overskrift" required></input>
+            <label class="fileContainer w-80 flex-column center">
+                <h2>Tilføj billede</h2>
+                <input class="w-80" id="file-upload" type="file" name="image">
+                <input type="hidden" name="input" value="file-upload">
+            </label>
+            <textarea name="om" rows="10" class="m-10 w-80">Skriv om dagen</textarea>
+            <input class="m-10 w-80" type="submit" value="Opret dagen"></input>
+        </form>
     </section>
     <script src="javascript/script.js"></script>
 </body>
