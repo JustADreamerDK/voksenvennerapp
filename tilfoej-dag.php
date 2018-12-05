@@ -19,7 +19,7 @@ $type = $_SESSION['brugertype'];
     include "include/header.php";
     ?>
     <section class="flex-column p-lr-30">
-        <form  class="m-t-50 w-100 flex-column center" action="post-opret-dag.php" method="post" class="flex-column">
+        <form  class="m-t-50 w-100 flex-column center" action="post-opret-dag.php" method="post" class="flex-column"  enctype="multipart/form-data">
             <input class="m-10 w-80" type="date" name="dato" placeholder="Dato" required></input>
             <input class="m-10 w-80" type="text" name="sted" placeholder="Sted" required></input>
             <input class="m-10 w-80" type="text" name="overskrift" placeholder="Overskrift" required></input>

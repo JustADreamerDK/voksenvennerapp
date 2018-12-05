@@ -109,8 +109,6 @@ function uploadAndResizeImage(array $fileToUpload, $uploadFolder, array $sizes) 
      */
 
     $sourceImageWidth = getimagesize($uploadedFile)[0];
-    $sourceImageHeight = getimagesize($uploadedFile)[1];
-    $sourceImageHeight = getimagesize($uploadedFile)[2];
 
     // var_dump($sourceImageWidth);
     // var_dump($sourceImageHeight);
@@ -146,7 +144,7 @@ function uploadAndResizeImage(array $fileToUpload, $uploadFolder, array $sizes) 
          */
 
         $width = $size;
-        $height = $size;
+        $height = ($sourceImageHeight / $sourceImageWidth) * $size;
 
         // echo $width;
         // echo $height;

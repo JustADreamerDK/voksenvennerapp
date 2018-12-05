@@ -70,6 +70,13 @@ function getDays(){
     return $result;
 }
 
+function getLastDay(){
+    global $objCon;
+    $sql = "SELECT `id`, `dato`, `lokation`, `overskrift`, `beskrivelse`, `venskabs_id` FROM `dag` ORDER BY `id` DESC";
+    $result = $objCon->query($sql);
+    return $result;
+}
+
 function getPictures($id){
     global $objCon;
     $sql = "SELECT `id`, `filnavn`, `bruges_mor`, `bruges_ven`, `dag_id` FROM `billede` WHERE `dag_id` = '$id'";
@@ -108,6 +115,13 @@ function createBarn($fornavn, $efternavn, $fodselsdag, $bruger_id){
 function createDay($dato, $lokation, $overskrift, $beskrivelse, $venskab_id){
     global $objCon;
     $sql = "INSERT INTO `dag`(`dato`, `lokation`, `overskrift`, `beskrivelse`, `venskabs_id`) VALUES ('$dato', '$lokation', '$overskrift', '$beskrivelse', '$venskab_id')";
+    $result = $objCon->query($sql);
+    return $result;
+}
+
+function createPicture($filnavn, $dag){
+    global $objCon;
+    $sql = "INSERT INTO `billede`(`filnavn`, `dag_id`) VALUES ('$filnavn', '$dag')";
     $result = $objCon->query($sql);
     return $result;
 }

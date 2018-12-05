@@ -27,15 +27,13 @@ $rowDay = mysqli_fetch_assoc($day)
                     <h3 class="bold"><?php echo $rowDay['overskrift']; ?></h3>
                 </div>
                 <div class="flex">
-                    <h3><?php echo $rowDay['dato']; ?></h3>
+                    <h3>
+                        <?php $date = $rowDays['dato'];
+                        $dato = new DateTime("$date");
+                        echo $dato->format('d-m-Y');
+                        ?>
+                    </h3>
                 </div>
-            </div>
-            <div class="flex-column right">
-                <ul class="minimenu">
-                    <li><a href=""><h3>Download</h3></a></li>
-                    <li><a href="rediger-dag.php?id=<?php echo $rowDay['id']; ?>"><h3>Rediger</h3></a></li>
-                    <li><a href="slet-dag.php?id=<?php echo $rowDay['id']; ?>"><h3>Slet</h3></a></li>
-                </ul>
             </div>
             <?php $dagId = $rowDay['id'];
             $billederne = getPictures($dagId);
